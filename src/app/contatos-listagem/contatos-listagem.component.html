@@ -1,0 +1,22 @@
+
+<div class="title">
+   <h2>Busca de Usuários</h2>
+   {{names}}
+   <img src="assets/img/github.png" alt="" style="width: 150px;">
+</div>
+
+<div class="seach-bar">
+    <button ><img src="assets/img/lupa.png" style="width: 30px;" alt=""></button>
+    <input [(ngModel)]="name" (keyup.enter)="addInput()" type="text" placeholder="Pesquisar" style="text-decoration: rgb(112, 128, 144);">
+</div>
+  <ul>
+    <li *ngFor='let contato of contatos'>
+       <div *ngIf="name === contato.login" class="list">
+               <br>
+            Usuário: <a href="{{contato.url}}">{{contato.login}}</a> <button (click)="Delete()" >Excluir</button>
+               <br>
+        </div>
+        
+    </li>
+  </ul>
+  

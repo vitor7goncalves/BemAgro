@@ -1,4 +1,4 @@
-# Project
+# BemAgro(Desenvolvendo um site para consumir e exibir dados do API GitHub)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
