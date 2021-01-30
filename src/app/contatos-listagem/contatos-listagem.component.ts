@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormControl } from '@angular/forms';
 import { ContatoService } from '../contato.service';
 
 @Component({
@@ -9,27 +10,30 @@ import { ContatoService } from '../contato.service';
 export class ContatosListagemComponent implements OnInit {
 
   contatos!: Array<any>;
-  name = "";
+ 
+
+  queryField = new FormControl();
+
   names: string[] = []
-  
+  name  = '';
 
   constructor(private contatoService: ContatoService) { }
 
   ngOnInit(): void {
     this.listar();
   }
-  listar(){
-     this.contatoService.listar().subscribe(dados => this.contatos = dados);
+  listar() {
+    this.contatoService.listar().subscribe(dados => this.contatos = dados);
   }
-  addInput() {
-    if(this.name.length !== 0){
-      this.names.push(this.name);
-      this.name= "";
-    }
-    console.log(this.names)
-  }
-  Delete(){
-    console.log("Ola")
+onSearch(){
+   this.name = this.queryField.value;
+   this.names.push(this.name);
+   this.name = '';
+}
+    
+  
+  Delete() {
+    this.name =''
   }
 
 }
