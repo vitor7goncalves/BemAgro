@@ -51,6 +51,10 @@ textarea:focus, button:focus, select:focus {
     text-decoration: none;
     color: black;
 }
+.list a:hover{
+    color: rgb(8, 141, 8);
+    text-decoration: underline;
+}
 .list button{
     float: right;
     margin-right: 50px;

@@ -6,18 +6,18 @@
 <div class="seach-bar">
     <button><img src="assets/img/lupa.png" style="width: 30px;" alt=""></button>
     <input (keyup.enter)="onSearch()" type="text" placeholder="Pesquisar"
-    [formControl]='queryField'
+     [(ngModel)]="name"
         style="text-decoration: rgb(112, 128, 144);">
 </div>
 <ul>
     <li *ngFor="let contato of contatos">
-     <div *ngFor='let n of names'>
-        <div *ngIf='n === contato.login' class="list">
-            <br>
-            Usuário: <a href="{{contato.url}}">{{contato.login}}</a> <button (click)="Delete()">Excluir</button>
-            <br>
+        <div *ngFor='let _name of names'>
+            <div *ngIf='_name === contato.login' class="list">
+                <br>
+                Usuário: <a href="{{contato.url}}">{{contato.login}}</a> <button (click)="Delete()">Excluir</button>
+                <br>
+            </div>
         </div>
-     </div>
 
     </li>
 </ul>

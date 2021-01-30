@@ -1,3 +1,4 @@
+import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl } from '@angular/forms';
 import { ContatoService } from '../contato.service';
@@ -10,13 +11,9 @@ import { ContatoService } from '../contato.service';
 export class ContatosListagemComponent implements OnInit {
 
   contatos!: Array<any>;
- 
-
-  queryField = new FormControl();
 
   names: string[] = []
-  name  = '';
-
+  name = ''
   constructor(private contatoService: ContatoService) { }
 
   ngOnInit(): void {
@@ -25,15 +22,15 @@ export class ContatosListagemComponent implements OnInit {
   listar() {
     this.contatoService.listar().subscribe(dados => this.contatos = dados);
   }
-onSearch(){
-   this.name = this.queryField.value;
-   this.names.push(this.name);
-   this.name = '';
-}
-    
-  
+  onSearch() {
+
+    this.names.push(this.name);
+    this.name = ""
+  }
+
+
   Delete() {
-    this.name =''
+    this.names.pop()
   }
 
 }
