@@ -6,12 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContatosListagemComponent } from './contatos-listagem/contatos-listagem.component';
 import { ContatoService } from './contato.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContatosListagemComponent
+    ContatosListagemComponent,
   ],
   imports: [
     BrowserModule,

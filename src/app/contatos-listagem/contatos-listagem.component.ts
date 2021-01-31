@@ -1,6 +1,5 @@
-import { newArray } from '@angular/compiler/src/util';
+
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl } from '@angular/forms';
 import { ContatoService } from '../contato.service';
 
 @Component({

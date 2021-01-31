@@ -5,14 +5,13 @@
 
 <div class="seach-bar">
     <button><img src="assets/img/lupa.png" style="width: 30px;" alt=""></button>
-    <input (keyup.enter)="onSearch()" type="text" placeholder="Pesquisar"
-     [(ngModel)]="name"
+    <input (keyup.enter)="onSearch()" [(ngModel)]="name" type="text" placeholder="Pesquisar"
         style="text-decoration: rgb(112, 128, 144);">
 </div>
 <ul>
     <li *ngFor="let contato of contatos">
         <div *ngFor='let _name of names'>
-            <div *ngIf='_name === contato.login' class="list">
+            <div *ngIf='_name === contato.login ' class="list">
                 <br>
                 Usuário: <a href="{{contato.url}}">{{contato.login}}</a> <button (click)="Delete()">Excluir</button>
                 <br>
@@ -21,3 +20,4 @@
 
     </li>
 </ul>
+<a href="src/maps.html">Mapa</a>
