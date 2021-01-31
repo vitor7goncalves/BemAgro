@@ -7,11 +7,16 @@ import { AppComponent } from './app.component';
 import { ContatosListagemComponent } from './contatos-listagem/contatos-listagem.component';
 import { ContatoService } from './contato.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClienteService } from './cliente.service';
+import { ClienteListaComponent } from './contatos-listagem/cliente-lista.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ContatosListagemComponent,
+    ClienteListaComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -20,7 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [ContatoService],
+  providers: [ContatoService,ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

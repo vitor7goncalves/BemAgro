@@ -1,24 +1,30 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ContatoService } from '../contato.service';
 
+ let L: any
 @Component({
   selector: 'app-contatos-listagem',
   templateUrl: './contatos-listagem.component.html',
   styleUrls: ['./contatos-listagem.component.css']
 })
+
+
+
 export class ContatosListagemComponent implements OnInit {
 
   contatos!: Array<any>;
 
   names: string[] = []
   name = ''
+  
+
   constructor(private contatoService: ContatoService) { }
 
   ngOnInit(): void {
-    this.listar();
+    this.list();
   }
-  listar() {
+  list() {
     this.contatoService.listar().subscribe(dados => this.contatos = dados);
   }
   onSearch() {
